@@ -24,7 +24,7 @@ const Theme5 = (props: Props) => {
         boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)",
       }}
     >
-      <p className="whitespace-pre-wrap absolute top-[100px] left-[10px] font-['Poppins'] text-base leading-[normal] tracking-[0.03em] text-left capitalize text-[#897647]">
+      <p className="whitespace-pre-wrap absolute top-[100px] left-[10px] font-['Helvetica'] text-base leading-[normal] tracking-[0.03em] text-left capitalize text-[#897647]">
         <FormattedMessage id="affichageList.title" />
       </p>
 
@@ -36,7 +36,7 @@ const Theme5 = (props: Props) => {
                 <thead style={{ backgroundColor: "lightgray" }}>
                   <tr>
                     <th
-                      className="font-['Poppins']"
+                      className="font-['Helvetica']"
                       style={{
                         color: "#0e0e0ee7",
                         fontSize: 18,
@@ -45,7 +45,7 @@ const Theme5 = (props: Props) => {
                       <FormattedMessage id="book.title" />
                     </th>
                     <th
-                      className="font-['Poppins']"
+                      className="font-['Helvetica']"
                       style={{
                         color: "#0e0e0ee7",
                         fontSize: 18,
@@ -54,7 +54,7 @@ const Theme5 = (props: Props) => {
                       <FormattedMessage id="book.author" />
                     </th>
                     <th
-                      className="font-['Poppins']"
+                      className="font-['Helvetica']"
                       style={{
                         textAlign: "center",
                         color: "#0e0e0ee7",
@@ -64,7 +64,7 @@ const Theme5 = (props: Props) => {
                       <FormattedMessage id="book.coverpath" />
                     </th>
                     <th
-                      className="font-['Poppins']"
+                      className="font-['Helvetica']"
                       style={{
                         textAlign: "center",
                         color: "#0e0e0ee7",
@@ -80,7 +80,7 @@ const Theme5 = (props: Props) => {
                     books.map((book) => (
                       <tr key={book._id}>
                         <th
-                          className="font-['Poppins']"
+                          className="font-['Helvetica']"
                           style={{
                             color: "black",
                             fontSize: 15,
@@ -95,7 +95,7 @@ const Theme5 = (props: Props) => {
                           </Link>
                         </th>
                         <th
-                          className="font-['Poppins']"
+                          className="font-['Helvetica']"
                           style={{
                             color: "black",
                             fontSize: 13,

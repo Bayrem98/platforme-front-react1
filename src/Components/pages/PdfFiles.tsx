@@ -16,7 +16,7 @@ function PdfFiles() {
 
   useEffect(() => {
     if (bookId) getBook(bookId, setBook); // aka setBook(data)
-  }, []);
+  }, [bookId]);
 
   useEffect(() => {
     if (book && viewerDiv.current)

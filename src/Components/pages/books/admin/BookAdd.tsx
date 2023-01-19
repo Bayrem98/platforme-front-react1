@@ -138,7 +138,7 @@ const BookAdd = (props: BookAddPropsType) => {
         <FontAwesomeIcon icon={faAdd} />
       </Button>
       <Modal
-        className="font-['Poppins']"
+        className="font-['Helvetica']"
         centered
         scrollable
         isOpen={isOpened}

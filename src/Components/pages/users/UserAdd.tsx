@@ -62,7 +62,7 @@ const UserAdd = (props: UserAddPropsType) => {
         <FontAwesomeIcon icon={faAdd} />
       </Button>
       <Modal
-        className="font-['Poppins']"
+        className="font-['Helvetica']"
         centered
         scrollable
         isOpen={isOpened}

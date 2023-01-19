@@ -12,7 +12,7 @@ import Vector3 from "../modules/Vector3";
 import Group10 from "../modules/Group10";
 import Line2 from "../modules/Line2";
 import { FormattedMessage } from "react-intl";
-import { Input, Table } from "reactstrap";
+import { Table } from "reactstrap";
 interface props {}
 
 const Accueil = (props: props) => {

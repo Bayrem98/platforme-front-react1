@@ -33,7 +33,7 @@ const SearchBooks = () => {
         boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)",
       }}
     >
-      <p className="whitespace-pre-wrap absolute top-[60px] left-[10px] font-['Poppins'] text-base leading-[normal] tracking-[0.03em] text-left capitalize text-[#897647]">
+      <p className="whitespace-pre-wrap absolute top-[60px] left-[10px] font-['Helvetica'] text-base leading-[normal] tracking-[0.03em] text-left capitalize text-[#897647]">
         <FormattedMessage id="search.page.title" />
       </p>
 

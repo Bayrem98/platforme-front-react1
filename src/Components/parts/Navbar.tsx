@@ -323,7 +323,7 @@ export default function Navbard(props: NavbardInterfaceProps) {
         <Modal centered scrollable isOpen={open} toggle={() => setOpen(false)}>
           <Form onSubmit={(e) => handleLogin(e)}>
             <ModalHeader
-              className="font-['MonteCarlo']"
+              className="font-['Helvetica']"
               toggle={() => setOpen(!open)}
               style={{ backgroundColor: "gray", color: "white" }}
             >
@@ -338,7 +338,7 @@ export default function Navbard(props: NavbardInterfaceProps) {
                   type="text"
                   onChange={changeUsername}
                 />
-                <Label className="font-['MonteCarlo']" for="username">
+                <Label className="font-['Helvetica']" for="username">
                   <FormattedMessage id="user.username" />
                 </Label>
               </FormGroup>
@@ -357,14 +357,14 @@ export default function Navbard(props: NavbardInterfaceProps) {
                 >
                   {eye}
                 </i>
-                <Label className="font-['MonteCarlo']" for="password">
+                <Label className="font-['Helvetica']" for="password">
                   <FormattedMessage id="user.password" />
                 </Label>
               </FormGroup>
             </ModalBody>
             <ModalFooter>
               <Button
-                className="font-['MonteCarlo']"
+                className="font-['Helvetica']"
                 style={{
                   backgroundColor: "gray",
                   border: 0,
@@ -375,7 +375,7 @@ export default function Navbard(props: NavbardInterfaceProps) {
                 <FormattedMessage id="button.confirm" />
               </Button>
               <Button
-                className="font-['MonteCarlo']"
+                className="font-['Helvetica']"
                 style={{
                   backgroundColor: "gray",
                   border: 0,

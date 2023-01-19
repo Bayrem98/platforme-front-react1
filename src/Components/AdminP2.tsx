@@ -27,7 +27,7 @@ const BooksTable = (props: Props) => {
     >
       <Line1 />
 
-      <p className="whitespace-pre-wrap absolute top-[60px] left-[20px] font-['Poppins'] text-xl leading-[normal] tracking-[0.03em] text-left capitalize text-[#897647]">
+      <p className="whitespace-pre-wrap absolute top-[60px] left-[20px] font-['Helvetica'] text-xl leading-[normal] tracking-[0.03em] text-left capitalize text-[#897647]">
         <FormattedMessage id="page.title.books" />
       </p>
 
@@ -37,25 +37,25 @@ const BooksTable = (props: Props) => {
           <thead>
             <tr>
               <th
-                className="font-['Poppins']"
+                className="font-['Helvetica']"
                 style={{ color: "#0e0e0ee7", backgroundColor: "lightgray" }}
               >
                 <FormattedMessage id="book.title" />
               </th>
               <th
-                className="font-['Poppins']"
+                className="font-['Helvetica']"
                 style={{ color: "#0e0e0ee7", backgroundColor: "lightgray" }}
               >
                 <FormattedMessage id="book.author" />
               </th>
               <th
-                className="font-['Poppins']"
+                className="font-['Helvetica']"
                 style={{ color: "#0e0e0ee7", backgroundColor: "lightgray" }}
               >
                 <FormattedMessage id="book.coverpath" />
               </th>
               <th
-                className="font-['Poppins']"
+                className="font-['Helvetica']"
                 style={{ color: "#0e0e0ee7", backgroundColor: "lightgray" }}
               >
                 <FormattedMessage id="book.language" />
@@ -64,7 +64,7 @@ const BooksTable = (props: Props) => {
                 <FormattedMessage id="book.theme" />
               </th>
               <th
-                className="font-['Poppins']"
+                className="font-['Helvetica']"
                 style={{
                   color: "#0e0e0ee7",
                   backgroundColor: "lightgray",
@@ -80,7 +80,7 @@ const BooksTable = (props: Props) => {
               books.map((book) => (
                 <tr key={book._id}>
                   <td
-                    className="font-['Poppins']"
+                    className="font-['Helvetica']"
                     style={{
                       color: "#0e0e0ee7",
                       fontSize: 15,
@@ -89,7 +89,7 @@ const BooksTable = (props: Props) => {
                     {book.title}
                   </td>
                   <td
-                    className="font-['Poppins']"
+                    className="font-['Helvetica']"
                     style={{ color: "#0e0e0ee7" }}
                   >
                     {book.author}
@@ -100,13 +100,13 @@ const BooksTable = (props: Props) => {
                   </td>
 
                   <td
-                    className="font-['Poppins']"
+                    className="font-['Helvetica']"
                     style={{ color: "#0e0e0ee7" }}
                   >
                     {book.language}
                   </td>
                   <td
-                    className="font-['Poppins']"
+                    className="font-['Helvetica']"
                     style={{ color: "#0e0e0ee7" }}
                   >
                     {book.theme}

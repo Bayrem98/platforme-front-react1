@@ -99,5 +99,12 @@
   "accueil.title.book2": "Book evaluation",
   "sidebar.button": "Quiz",
   "sidebar.button.login": "Login",
-  "sidebar.button.logout": "Logout"
+  "sidebar.button.logout": "Logout",
+  "acc.table.mois": "Month",
+  "acc.table.Phase": "Lunar phase",
+  "acc.table.date": "Date",
+  "acc.table.heure": "Hour",
+  "acc.table.distance": "Distance(Earth-Moon)",
+  "acc.table.signe": "Signe",
+  "acc.table.constellation": "Zodiac Constellation"
 }

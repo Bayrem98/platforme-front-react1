@@ -27,7 +27,7 @@ const AddUser2 = (props: Props) => {
     >
       <Line1 />
 
-      <p className="whitespace-pre-wrap absolute top-[60px] left-[20px] font-['Poppins'] text-xl leading-[normal] tracking-[0.03em] text-left capitalize text-[#897647]">
+      <p className="whitespace-pre-wrap absolute top-[60px] left-[20px] font-['Helvetica'] text-xl leading-[normal] tracking-[0.03em] text-left capitalize text-[#897647]">
         <FormattedMessage id="page.title.users" />
       </p>
 
@@ -43,13 +43,13 @@ const AddUser2 = (props: Props) => {
           <thead>
             <tr>
               <th
-                className="font-['Poppins']"
+                className="font-['Helvetica']"
                 style={{ color: "#0e0e0ee7", backgroundColor: "lightgray" }}
               >
                 <FormattedMessage id="user.username" />
               </th>
               <th
-                className="w-[90px] font-['Poppins']"
+                className="w-[90px] font-['Helvetica']"
                 style={{
                   color: "#0e0e0ee7",
                   backgroundColor: "lightgray",
@@ -65,7 +65,7 @@ const AddUser2 = (props: Props) => {
               users.map((user) => (
                 <tr key={user._id}>
                   <td
-                    className="font-['Poppins']"
+                    className="font-['Helvetica']"
                     style={{
                       color: "#0e0e0ee7",
                       fontSize: 18,
