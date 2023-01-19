@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;400;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
+
+* {
+  font-family: "Cairo", sans-serif;
+}
+
+
+.navbar {
+  width: 100%;
+  padding-top: 1px;
+  padding-bottom: 07px;
+  background-image: url("/public/img/navbar img 3.jpg");
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  display: flex;
+}
+
+h1 {
+  color: rgba(255, 255, 255, 0.541);
+  font-size: 40px;
+  text-align: center;
+  -webkit-text-stroke: 1px rgb(0, 0, 0);
+}
+
+h3 {
+  color: rgb(255, 255, 255);
+  font-size: 35px;
+  padding-right: 70px;
+  padding-top: 10px;
+  font-family: "Caveat Brush";
+}
+
+h4 {
+  color: #ffffff;
+  font-size: 18px;
+  padding-right: 45px;
+}
+
+h6 {
+  color: #eff1f7e7;
+}
+
+p {
+  color: #eff1f7e7;
+  font-size: 20px;
+  text-shadow: 1px 1px 0 #000, 1px 1px 0 #000, 1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+body {
+  background-image: url("/public/img/body sans raff.jpg");
+  background-size: cover;
+}
+
+.accueil {
+  padding-top: 195px;
+  padding-right: 15px;
+}
+
+.table {
+  color: #ffffff;
+}
+
+.tablebook {
+  overflow-x: hidden;
+  background-color: #b88a663a;
+  padding-top: 95px;
+}
+.userst {
+  background-color: #b88a663a;
+  padding-top: 95px;
+}
+
+.pro-menu-item {
+  list-style: none !important;
+}
+
+.webviewer {
+  height: calc(100vh - 1px);
+  overflow: auto;
+  padding-top: 90px;
+}
+
+.books {
+  overflow-x: hidden;
+  padding-top: 95px;
+}
+
+.book {
+  padding-top: 95px;
+}
+
+.books > .row > .col-lg-2:hover {
+  transform: translateX(-25px) scale(0.9);
+  transition: 0.5s;
+}
+
+.books > .row > .col-lg-2:not(:hover) {
+  transform: translateX(-5px) scale(0.9);
+  transition: 0.5s;
+}
+
+.bookst {
+  overflow-x: hidden;
+  padding-top: 95px;
+}
+
+.bookst > .row > .col-lg-2:hover {
+  transform: translateX(-25px) scale(0.9);
+  transition: 0.5s;
+}
+
+.bookst > .row > .col-lg-2:not(:hover) {
+  transform: translateX(-5px) scale(0.9);
+  transition: 0.5s;
+}
+
+.home {
+  overflow-x: hidden;
+  padding-top: 88px;
+}
+
+.affichage {
+  overflow-x: hidden;
+  padding-top: 95px;
+  padding-left: 7px;
+}
+
+a {
+  color: #dfe3ebe7;
+}
+
+.cardbody {
+  flex-direction: column;
+}
+
+.text-break {
+  padding: 6px;
+  background-color: rgba(27, 26, 26, 0.657);
+  color: rgb(243, 236, 236);
+}
+.cardvideo {
+  padding-top: 100px;
+  text-align: center;
+}
+
+.cardimg {
+  background-color: #1d1d1d;
+  border: none;
+}
+
+.books {
+  overflow: auto;
+  overflow-x: hidden;
+  padding-top: 95px;
+}
+
+.btn1-book {
+  font-size: 25px;
+  outline: none;
+  padding: 1px 20px;
+  cursor: pointer;
+  transition: 0.7s;
+  border: 0px;
+  background-color: #855e42;
+  font-family: "Caveat Brush";
+}
+
+.btn1-book:hover {
+  transform: scale(1.1);
+}
+
+.btn4-book {
+  outline: none;
+  padding: 1px 1px;
+  cursor: pointer;
+  transition: 0.5s;
+  border-radius: 50px;
+}
+
+.btn4-book:hover {
+  transform: scale(1.1);
+  background-color: rgb(136, 136, 136);
+}
+
+.btn4-book:not(:hover) {
+  background-color: rgb(49, 47, 47);
+}
+
+.img-flech:hover {
+  animation: rotate 1s linear infinite;
+}
+
+.img-flech2 {
+  padding-left: 5px;
+  transition: 0.7s;
+}
+
+.img-flech2:hover {
+  transform: scale(2);
+}
+
+@keyframes rotate {
+  0% {
+    transform: perspective(70px) rotateZ(0deg);
+  }
+
+  100% {
+    transform: perspective(70px) rotateZ(-45deg);
+  }
+}
+
+.btn2-affichage {
+  font-size: 14px;
+  outline: none;
+  padding: 1px 20px;
+  cursor: pointer;
+  transition: 0.7s;
+  border-radius: 5px;
+  background-color: rgb(47, 4, 44);
+}
+
+.btn2-affichage:hover {
+  transform: scale(1.1);
+}
+
+.btn3-delete {
+  transition: 0.7s;
+}
+
+.btn3-delete:hover {
+  transform: scale(1.2);
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.mb-2 {
+  transition: 1.2s;
+  font-family: "Caveat Brush";
+}
+
+.mb-2:hover {
+  transform: scale(0.9);
+}
+
+.imageaffichage {
+  transition: 0.3s;
+}
+
+.imageaffichage:hover {
+  transform: translateX(28px) scale(7);
+}
+
+.img-table {
+  transition: 0.3s;
+}
+
+.img-table:hover {
+  transform: scale(4);
+}
+
