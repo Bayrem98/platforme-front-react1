@@ -13,6 +13,7 @@ import BookDetails from "./Components/BookDetails";
 import AdminPage from "./Components/AdminPage";
 import Theme5 from "./Components/Theme5";
 import AdminP2 from "./Components/AdminP2";
+import TableMl from "./Components/pages/books/admin/TableMl";
 
 interface Messages {
   "login.title": string;
@@ -57,6 +58,7 @@ function App() {
                 <Route path="/pdffiles/:bookId" element={<PdfFiles />} />
                 <Route path="/theme5" element={<Theme5 />} />
                 <Route path="/booksSearch/:search" element={<SearchBooks />} />
+                <Route path="/tableml" element={<TableMl />} />
               </Routes>
             </div>
           </div>

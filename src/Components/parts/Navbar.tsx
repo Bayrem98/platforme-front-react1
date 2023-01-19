@@ -238,7 +238,7 @@ export default function Navbard(props: NavbardInterfaceProps) {
                 <DropdownMenu
                   style={{
                     backgroundColor: "lightgray",
-                    height: 75,
+                    height: 120,
                     padding: 1,
                   }}
                   className="w-[20px] h-[85px] absolute"
@@ -249,7 +249,11 @@ export default function Navbard(props: NavbardInterfaceProps) {
                       to="/adminp2"
                       style={{ textDecoration: "none", color: "black" }}
                     >
+                      <UncontrolledTooltip placement="bottom" target="addbook">
+                        +Book
+                      </UncontrolledTooltip>
                       <img
+                        id="addbook"
                         src="/img/icons/book.png"
                         alt="img"
                         height={20}
@@ -262,8 +266,29 @@ export default function Navbard(props: NavbardInterfaceProps) {
                       to="/adduser2"
                       style={{ textDecoration: "none", color: "black" }}
                     >
+                      <UncontrolledTooltip placement="bottom" target="adduser">
+                        +User
+                      </UncontrolledTooltip>
                       <img
+                        id="adduser"
                         src="/img/icons/add-user.png"
+                        alt="img"
+                        height={20}
+                        width={30}
+                      />
+                    </Link>
+                  </DropdownItem>
+                  <DropdownItem>
+                    <Link
+                      to="/tableml"
+                      style={{ textDecoration: "none", color: "black" }}
+                    >
+                      <UncontrolledTooltip placement="left" target="table">
+                        Table
+                      </UncontrolledTooltip>
+                      <img
+                        id="table"
+                        src="/img/icons/icons8-table-40.png"
                         alt="img"
                         height={20}
                         width={30}
