@@ -46,7 +46,12 @@ const Accueil = (props: props) => {
 
       <div className="absolute top-[110px] left-[20px]">
         <Table responsive hover>
-          <thead style={{ backgroundColor: "beige", color: "gray" }}>
+          <thead
+            style={{
+              backgroundColor: "rgba(211, 201, 18, 0.747)",
+              color: "black",
+            }}
+          >
             <tr>
               <th style={{ textAlign: "center" }}>
                 <FormattedMessage id="acc.table.mois" />
@@ -165,7 +170,7 @@ const Accueil = (props: props) => {
         <div key={book._id}>
           <Link to={"/bookdetails/" + book._id}>
             <img
-              className="w-[164px] h-[220px] absolute top-[110px] left-[850px] object-cover"
+              className="w-[164px] h-[220px] absolute top-[110px] left-[830px] object-cover"
               style={{
                 boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)",
               }}
