@@ -107,5 +107,8 @@
   "acc.table.distance": "Distance(Terre-Lune)",
   "acc.table.signe": "Signe-Astrologie",
   "acc.table.constellation": "Constellation Zodiaque",
-  "page.title.tables": "Mouvement Lunaire"
+  "page.title.tables": "Mouvement Lunaire",
+  "table.delete.dialog.title": "Supprimer",
+  "tables.delete.dialog.text": "Voulez-vous vraiment supprimer",
+  "tables.add.dialog.title": "Ajouter"
 }

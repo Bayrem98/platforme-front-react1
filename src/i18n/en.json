@@ -107,5 +107,8 @@
   "acc.table.distance": "Distance(Earth-Moon)",
   "acc.table.signe": "Signe-Astrology",
   "acc.table.constellation": "Zodiac Constellation",
-  "page.title.tables": "Moon movement"
+  "page.title.tables": "Moon movement",
+  "table.delete.dialog.title": "Delete",
+  "tables.delete.dialog.text": "Do you really want to delete",
+  "tables.add.dialog.title": "Add"
 }
