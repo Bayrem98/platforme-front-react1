@@ -19,7 +19,7 @@ const Theme5 = (props: Props) => {
 
   return (
     <div
-      className="box-border block left-[-147px] w-[1285px] h-[692px] relative overflow-x-hidden rounded-sm bg-[#f3f3f3]"
+      className="box-border block left-[245px] w-[1035px] h-[855px] absolute overflow-x-hidden rounded-sm bg-[#f3f3f3]"
       style={{
         boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)",
       }}

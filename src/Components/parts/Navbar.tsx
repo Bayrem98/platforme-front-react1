@@ -301,7 +301,7 @@ export default function Navbard(props: NavbardInterfaceProps) {
 
         {localStorage.getItem("access_token") ? (
           <Button
-            className="w-[40px] h-[40px] left-[1440px] top-[-15px] absolute"
+            className="w-[40px] h-[40px] left-[1220px] top-[-15px] absolute"
             onClick={logout}
             style={{
               backgroundColor: "#e6e1dc00",
@@ -320,7 +320,7 @@ export default function Navbard(props: NavbardInterfaceProps) {
           </Button>
         ) : (
           <Button
-            className="w-[40px] h-[40px] left-[1440px] top-[-17px] absolute"
+            className="w-[40px] h-[40px] left-[1220px] top-[-17px] absolute"
             onClick={toggleModal}
             style={{
               backgroundColor: "#e6e1dc00",

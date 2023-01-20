@@ -31,7 +31,7 @@ function PdfFiles() {
 
   return (
     <div
-      className="h-[690px] w-[1285px] top-[50px] left-[247px] absolute"
+      className="h-[855px] w-[1033px] top-[50px] left-[247px] absolute"
       ref={viewerDiv}
     >
       <div onClick={() => navigate(-1)} style={{ cursor: "pointer" }}>
