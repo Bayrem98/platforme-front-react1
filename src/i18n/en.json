@@ -101,10 +101,11 @@
   "sidebar.button.login": "Login",
   "sidebar.button.logout": "Logout",
   "acc.table.mois": "Month",
-  "acc.table.Phase": "Lunar phase",
+  "acc.table.Phase": "Moon-phase",
   "acc.table.date": "Date",
   "acc.table.heure": "Hour",
   "acc.table.distance": "Distance(Earth-Moon)",
-  "acc.table.signe": "Signe",
-  "acc.table.constellation": "Zodiac Constellation"
+  "acc.table.signe": "Signe-Astrology",
+  "acc.table.constellation": "Zodiac Constellation",
+  "page.title.tables": "Moon movement"
 }

@@ -35,7 +35,7 @@ const AddUser2 = (props: Props) => {
         <UserAdd refresh={() => getUsers(setUsers)} />
 
         <Table
-          className="left-[230px] w-[700px] absolute"
+          className="left-[230px] w-[700px] absolute font-['Helvetica']"
           bordered
           responsive
           hover

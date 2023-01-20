@@ -3,7 +3,7 @@ import React from "react";
 const Rectangle73 = () => {
   return (
     <svg
-      className="absolute top-[180px] left-[830px]"
+      className="absolute top-[180px] left-[800px]"
       width={440}
       height={181}
       viewBox="0 0 456 181"

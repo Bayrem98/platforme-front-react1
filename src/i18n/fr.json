@@ -101,10 +101,11 @@
   "sidebar.button.login": "Connexion",
   "sidebar.button.logout": "Déconnexion",
   "acc.table.mois": "Mois",
-  "acc.table.Phase": "Phase Lunaire",
+  "acc.table.Phase": "Phase-Lunaire",
   "acc.table.date": "Date",
   "acc.table.heure": "Heure",
   "acc.table.distance": "Distance(Terre-Lune)",
-  "acc.table.signe": "Signe",
-  "acc.table.constellation": "Constellation Zodiaque"
+  "acc.table.signe": "Signe-Astrologie",
+  "acc.table.constellation": "Constellation Zodiaque",
+  "page.title.tables": "Mouvement Lunaire"
 }

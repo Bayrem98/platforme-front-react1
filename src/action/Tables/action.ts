@@ -2,7 +2,7 @@ import axios from "axios";
 import Tablee from "../../@Types/Table";
 
 export function getTables(
-  query: { mois?: string; date?: string } | null,
+  query: { date?: string } | null,
   callback: (data: Tablee[]) => void
 ) {
   axios

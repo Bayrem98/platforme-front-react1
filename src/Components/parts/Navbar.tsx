@@ -101,7 +101,7 @@ export default function Navbard(props: NavbardInterfaceProps) {
         <Form onSubmit={(e) => e.preventDefault()}>
           <Input
             onChange={(e) => setSearch(e.target.value)}
-            className="w-[450px] h-11 absolute top-[3px] left-[270px] rounded-[20px] bg-[#e7eaec]"
+            className="w-[450px] h-11 absolute top-[3px] left-[270px] rounded-[20px] bg-[#e7eaec] font-['Helvetica']"
             type="text"
             placeholder={intl.formatMessage({ id: "placeholder" })}
           />
@@ -283,11 +283,7 @@ export default function Navbard(props: NavbardInterfaceProps) {
                       to="/tableml"
                       style={{ textDecoration: "none", color: "black" }}
                     >
-                      <UncontrolledTooltip placement="left" target="table">
-                        Table
-                      </UncontrolledTooltip>
                       <img
-                        id="table"
                         src="/img/icons/icons8-table-40.png"
                         alt="img"
                         height={20}

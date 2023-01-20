@@ -24,13 +24,14 @@ const BookDelete = ({ book, refresh }: BookDeletePropsType) => {
   return (
     <>
       <Button
-        className="btn3-delete"
+        className="btn3-delete font-['Helvetica']"
         color="danger"
         onClick={() => setIsOpened(true)}
       >
         <FontAwesomeIcon icon={faTrash} />
       </Button>
       <Modal
+        className="font-['Helvetica']"
         centered
         scrollable
         isOpen={isOpened}

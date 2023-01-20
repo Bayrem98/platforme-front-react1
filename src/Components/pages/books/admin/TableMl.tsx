@@ -1,13 +1,13 @@
 import { FormattedMessage } from "react-intl";
 import { useEffect, useState } from "react";
-import { Container, Table, } from "reactstrap";
+import { ButtonGroup, Container, Table } from "reactstrap";
 import Tablee from "../../../../@Types/Table";
 import { getTables } from "../../../../action/Tables/action";
 import Line1 from "../../../modules/Line1";
 import TableAdd from "./TableAdd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBoxOpen } from "@fortawesome/free-solid-svg-icons";
-
+import TableDelete from "./TableDelete";
 interface Props {}
 
 const TableMl = (props: Props) => {
@@ -24,55 +24,86 @@ const TableMl = (props: Props) => {
         boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)",
       }}
     >
-       <Line1 />
+      <Line1 />
 
-<p className="whitespace-pre-wrap absolute top-[60px] left-[20px] font-['Helvetica'] text-xl leading-[normal] tracking-[0.03em] text-left capitalize text-[#897647]">
-  <FormattedMessage id="page.title.books" />
-</p>
+      <p className="whitespace-pre-wrap absolute top-[40px] left-[20px] font-['Helvetica'] text-xl leading-[normal] tracking-[0.03em] text-left capitalize text-[#897647]">
+        <FormattedMessage id="page.title.tables" />
+      </p>
 
-<Container className="top-[130px] absolute">
-  <TableAdd refresh={() => getTables(null, setTables)} />
-      
-      <Table className="top-[200px] relative" bordered hover>
-        <thead style={{ backgroundColor: "lightgray" }}>
-          <tr>
-            <th>Mois</th>
-            <th>Phase Lunaire</th>
-            <th>Date</th>
-            <th>Heure</th>
-            <th>Distance(Terre-Lune)</th>
-            <th>Signe</th>
-            <th>Constellation Zodiaque</th>
-          </tr>
-        </thead>
-        <tbody>
-        {tables.length ? (
+      <Container className="top-[90px] absolute">
+        <TableAdd refresh={() => getTables(null, setTables)} />
+
+        <Table className="relative top-[30px] font-['Helvetica']" bordered hover>
+          <thead style={{ backgroundColor: "lightgray" }}>
+            <tr>
+              <th style={{ textAlign: "center" }}>
+                <FormattedMessage id="acc.table.mois" />
+              </th>
+              <th style={{ textAlign: "center" }}>
+                <FormattedMessage id="acc.table.Phase" />
+              </th>
+              <th style={{ textAlign: "center" }}>
+                <FormattedMessage id="acc.table.date" />
+              </th>
+              <th style={{ textAlign: "center" }}>
+                <FormattedMessage id="acc.table.signe" />
+              </th>
+              <th style={{ textAlign: "center", width: 60 }}>
+                <FormattedMessage id="book.coverpath" />
+              </th>
+              <th
+                className="font-['Helvetica']"
+                style={{
+                  color: "#0e0e0ee7",
+                  backgroundColor: "lightgray",
+                  textAlign: "center",
+                }}
+              >
+                <FormattedMessage id="book.actions" />
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {tables.length ? (
               tables.map((table) => (
                 <tr key={table._id}>
-            <td rowSpan={8}>Jan-2023</td>
-            <td>Noeud ascendant</td>
-            <td>01/01/2023</td>
-            <td>16:25</td>
-            <td>393 124 Km</td>
-            <td>Taureau</td>
-            <td>Bélier</td>
-          </tr>
-           ))
-           ) : (
-             <tr>
-               <td
-                 colSpan={7}
-                 className="text-center p-5"
-                 style={{ color: "#0e0e0ee7" }}
-               >
-                 <FontAwesomeIcon icon={faBoxOpen} size="4x" />
-                 <br />
-                 <FormattedMessage id="page.users.no-data" />
-               </td>
-             </tr>
-           )}
-         </tbody>
-      </Table>
+                  <td style={{ textAlign: "center" }}>{table.mois}</td>
+                  <td style={{ textAlign: "center" }}>{table.phaseLun}</td>
+                  <td style={{ textAlign: "center" }}>{table.date}</td>
+                  <td style={{ textAlign: "center" }}>{table.signe}</td>
+                  <td style={{ textAlign: "center" }}>
+                    <img
+                      style={{ alignItems: "center" }}
+                      src={table.coverPath}
+                      alt=""
+                      width={50}
+                    />
+                  </td>
+                  <td style={{ textAlign: "center" }}>
+                    <ButtonGroup>
+                      <TableDelete
+                        table={table}
+                        refresh={() => getTables(null, setTables)}
+                      />
+                    </ButtonGroup>
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td
+                  colSpan={8}
+                  className="text-center p-5"
+                  style={{ color: "#0e0e0ee7" }}
+                >
+                  <FontAwesomeIcon icon={faBoxOpen} size="4x" />
+                  <br />
+                  <FormattedMessage id="page.users.no-data" />
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </Table>
       </Container>
     </div>
   );

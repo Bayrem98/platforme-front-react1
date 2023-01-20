@@ -31,6 +31,7 @@ const UserDelete = ({ user, refresh }: UserDeletePropsType) => {
         <FontAwesomeIcon icon={faTrash} />
       </Button>
       <Modal
+        className="font-['Helvetica']"
         centered
         scrollable
         isOpen={isOpened}

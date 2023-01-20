@@ -37,7 +37,7 @@ function PdfFiles() {
       <div onClick={() => navigate(-1)} style={{ cursor: "pointer" }}>
         <IconNavArrowLeft />
         <Ellipse1 />
-        <p className="top-[82px] left-[65px] absolute capitalize text-[#897647]">
+        <p className="top-[82px] left-[65px] absolute capitalize text-[#897647] font-['Helvetica']">
           <FormattedMessage id="bookdetails.button" />
         </p>
       </div>

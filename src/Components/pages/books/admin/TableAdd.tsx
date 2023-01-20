@@ -19,6 +19,28 @@ interface BookAddPropsType {
   refresh: () => void;
 }
 
+const fields = [
+  { key: "Nouvelle Lune", name: "Nouvelle Lune" },
+  { key: "Premier Quartier", name: "Premier Quartier" },
+  { key: "Pleine Lune", name: "Pleine Lune" },
+  { key: "Dernier Quartier", name: "Dernier Quartier" },
+];
+
+const fieldss = [
+  { key: "Bélier", name: "Bélier" },
+  { key: "Taureau", name: "Taureau" },
+  { key: "Gémeaux", name: "Gémeaux" },
+  { key: "Cancer", name: "Cancer" },
+  { key: "Lion", name: "Lion" },
+  { key: "Vierge", name: "Vierge" },
+  { key: "Balance", name: "Balance" },
+  { key: "Scorpion", name: "Scorpion" },
+  { key: "Sagittaire", name: "Sagittaire" },
+  { key: "Capricorne", name: "Capricorne" },
+  { key: "Verseau", name: "Verseau" },
+  { key: "Poissons", name: "Poissons" },
+];
+
 const TableAdd = (props: BookAddPropsType) => {
   const [isOpened, setIsOpened] = useState<boolean>(false);
 
@@ -26,20 +48,35 @@ const TableAdd = (props: BookAddPropsType) => {
   const [mois, setMois] = useState<string>("");
   const [phaseLun, setPhaseLun] = useState<string>("");
   const [date, setDate] = useState<any>();
-  const [heure, setHeure] = useState<any>();
-  const [distance, setDistance] = useState<string>("");
   const [signe, setSigne] = useState<string>("");
-  const [zodiaque, setZodiaque] = useState<string>("");
+  const [coverPath, setCoverPath] = useState<any>();
+
+  const changeCoverHandler = (event: any) => {
+    const selectedCover = event.target.files[0];
+    const formData = new FormData();
+    formData.append("file", selectedCover);
+    fetch("http://localhost:5000/upload/cover", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        console.log("Success:", result);
+        setCoverPath("http://localhost:5000/upload/cover/" + result.filename);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        setCoverPath(undefined);
+      });
+  };
 
   const submit = () => {
     const newTab = {
       mois,
       phaseLun,
       date,
-      heure,
-      distance,
       signe,
-      zodiaque,
+      coverPath,
     };
     console.log(newTab);
 
@@ -54,16 +91,14 @@ const TableAdd = (props: BookAddPropsType) => {
     setMois("");
     setPhaseLun("");
     setDate("");
-    setHeure("");
-    setDistance("");
     setSigne("");
-    setZodiaque("");
+    setCoverPath("");
   };
 
   return (
     <>
       <Button
-        className="w-[50px] h-[50px] top-[-90px] left-[880px] absolute"
+        className="w-[50px] h-[50px] top-[-50px] left-[880px] absolute"
         style={{ backgroundColor: "#deb887", border: 0 }}
         size="lg"
         onClick={() => setIsOpened(true)}
@@ -81,7 +116,7 @@ const TableAdd = (props: BookAddPropsType) => {
           style={{ backgroundColor: "gray", color: "white" }}
           toggle={() => setIsOpened(!isOpened)}
         >
-          <FormattedMessage id="books.add.dialog.title" />
+          <FormattedMessage id="tables.add.dialog.title" />
         </ModalHeader>
         <ModalBody>
           <Form inline>
@@ -94,7 +129,7 @@ const TableAdd = (props: BookAddPropsType) => {
                 onChange={(e) => setMois(e.target.value)}
               />
               <Label for="mois">
-                <FormattedMessage id="table.mois" />
+                <FormattedMessage id="acc.table.mois" />
               </Label>
             </FormGroup>
             <FormGroup floating>
@@ -102,11 +137,17 @@ const TableAdd = (props: BookAddPropsType) => {
                 value={phaseLun}
                 id="phaseLun"
                 name="phaseLun"
-                type="text"
+                type="select"
                 onChange={(e) => setPhaseLun(e.target.value)}
-              />
+              >
+                {fields.map((f) => (
+                  <option key={f.key} value={f.key}>
+                    {f.name}
+                  </option>
+                ))}
+              </Input>
               <Label for="phaseLun">
-                <FormattedMessage id="table.phaseLun" />
+                <FormattedMessage id="acc.table.Phase" />
               </Label>
             </FormGroup>
             <FormGroup floating>
@@ -118,56 +159,37 @@ const TableAdd = (props: BookAddPropsType) => {
                 onChange={(e) => setDate(e.target.value)}
               ></Input>
               <Label for="date">
-                <FormattedMessage id="table.date" />
+                <FormattedMessage id="acc.table.date" />
               </Label>
             </FormGroup>
             <FormGroup floating>
-              <Input
-                value={heure}
-                id="heure"
-                name="heure"
-                type="number"
-                onChange={(e) => setHeure(e.target.value)}
-              ></Input>
-              <Label for="heure">
-                <FormattedMessage id="table.heure" />
-              </Label>
-            </FormGroup>
-            <FormGroup>
-              <Label for="distance">
-                <FormattedMessage id="table.distance" />
-              </Label>
-              <Input
-                value={distance}
-                id="distance"
-                name="distance"
-                type="number"
-                onChange={(e) => setDistance(e.target.value)}
-              />
-            </FormGroup>
-            <FormGroup>
-              <Label for="signe">
-                <FormattedMessage id="table.signe" />
-              </Label>
               <Input
                 value={signe}
                 id="signe"
                 name="signe"
-                type="text"
+                type="select"
                 onChange={(e) => setSigne(e.target.value)}
-              />
-            </FormGroup>
-            <FormGroup floating>
-              <Input
-                value={zodiaque}
-                id="zodiaque"
-                name="zodiaque"
-                type="text"
-                onChange={(e) => setZodiaque(e.target.value)}
-              />
-              <Label for="zodiaque">
-                <FormattedMessage id="table.zodiaque" />
+              >
+                {fieldss.map((f) => (
+                  <option key={f.key} value={f.key}>
+                    {f.name}
+                  </option>
+                ))}
+              </Input>
+              <Label for="signe">
+                <FormattedMessage id="acc.table.signe" />
               </Label>
+            </FormGroup>
+            <FormGroup>
+              <Label for="coverPath">
+                <FormattedMessage id="book.coverPath" />
+              </Label>
+              <Input
+                id="coverPath"
+                name="coverPath"
+                type="file"
+                onChange={changeCoverHandler}
+              />
             </FormGroup>
           </Form>
         </ModalBody>
@@ -178,15 +200,7 @@ const TableAdd = (props: BookAddPropsType) => {
               border: 0,
             }}
             onClick={submit}
-            disabled={
-              !mois ||
-              !phaseLun ||
-              !date ||
-              !heure ||
-              !distance ||
-              !signe ||
-              !zodiaque
-            }
+            disabled={!phaseLun || !date || !signe}
           >
             <FormattedMessage id="button.confirm" />
           </Button>{" "}

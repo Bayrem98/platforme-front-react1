@@ -31,7 +31,7 @@ const BooksTable = (props: Props) => {
         <FormattedMessage id="page.title.books" />
       </p>
 
-      <Container className="top-[130px] absolute">
+      <Container className="top-[130px] absolute font-['Helvetica']">
         <BookAdd refresh={() => getBooks(null, setBooks)} />
         <Table bordered responsive hover>
           <thead>

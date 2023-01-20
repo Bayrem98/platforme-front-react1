@@ -31,6 +31,7 @@ const TableDelete = ({ table, refresh }: TableDeletePropsType) => {
         <FontAwesomeIcon icon={faTrash} />
       </Button>
       <Modal
+        className="font-['Helvetica']"
         centered
         scrollable
         isOpen={isOpened}
