@@ -108,6 +108,7 @@
   "acc.table.signe": "Signe-Astrology",
   "acc.table.constellation": "Zodiac Constellation",
   "page.title.tables": "Moon movement",
+  "page.title2.tables": "Every month you have to delete the data and enter the new data",
   "table.delete.dialog.title": "Delete",
   "tables.delete.dialog.text": "Do you really want to delete",
   "tables.add.dialog.title": "Add"

@@ -33,7 +33,16 @@ const TableMl = (props: Props) => {
       <Container className="top-[90px] absolute">
         <TableAdd refresh={() => getTables(null, setTables)} />
 
-        <Table className="relative top-[30px] font-['Helvetica']" bordered hover>
+        <p style={{ color: "red" }}>
+          <img src="/img/icons/img-table/attention.png" alt="img" width={30} />
+          <FormattedMessage id="page.title2.tables" />
+        </p>
+
+        <Table
+          className="relative top-[30px] font-['Helvetica']"
+          bordered
+          hover
+        >
           <thead style={{ backgroundColor: "lightgray" }}>
             <tr>
               <th style={{ textAlign: "center" }}>
