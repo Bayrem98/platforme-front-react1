@@ -283,7 +283,14 @@ export default function Navbard(props: NavbardInterfaceProps) {
                       to="/tableml"
                       style={{ textDecoration: "none", color: "black" }}
                     >
+                      <UncontrolledTooltip
+                        placement="bottom"
+                        target="tab"
+                      >
+                        Tableau
+                      </UncontrolledTooltip>
                       <img
+                        id="tab"
                         src="/img/icons/icons8-table-40.png"
                         alt="img"
                         height={20}

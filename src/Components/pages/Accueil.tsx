@@ -7,7 +7,6 @@ import { Link, useParams } from "react-router-dom";
 import Book from "../../@Types/Book";
 import { getBooks } from "../../action/Books/action";
 import Rectangle73 from "../modules/Rectangle73";
-import Vector3 from "../modules/Vector3";
 import Group10 from "../modules/Group10";
 import Line2 from "../modules/Line2";
 import { FormattedMessage } from "react-intl";
@@ -163,7 +162,6 @@ const Accueil = (props: props) => {
       ))}
 
       <Group10 />
-      <Vector3 />
       <p className="whitespace-pre-wrap absolute top-[790px] left-[25px] font-['Helvetica'] text-xl leading-[normal] tracking-[0.03em] italic text-left text-black">
         <FormattedMessage id="theme1" />
       </p>
