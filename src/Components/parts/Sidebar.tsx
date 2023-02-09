@@ -7,7 +7,7 @@ const Sidebar = () => {
   const intl = useIntl();
 
   return (
-    <div className=" absolute top-[-108px] left-0 rounded-tr-[57px]">
+    <div className="absolute left-0">
       <ProSidebar>
         <Menu>
           <SubMenu

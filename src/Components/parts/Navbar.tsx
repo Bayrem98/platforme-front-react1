@@ -91,7 +91,7 @@ export default function Navbard(props: NavbardInterfaceProps) {
   return (
     <div className="h-[50px] bg-gray-400">
       <Navbar expand="md" light responsive>
-        <NavbarBrand>
+        <NavbarBrand href="/">
           <p className="whitespace-pre-wrap absolute cursor-pointer top-[10px] left-[45px] h-[61px] w-[135px]  font-['Helvetica'] text-2xl leading-[normal] text-left text-white">
             <FormattedMessage id="navbar.title" />
           </p>
@@ -283,10 +283,7 @@ export default function Navbard(props: NavbardInterfaceProps) {
                       to="/tableml"
                       style={{ textDecoration: "none", color: "black" }}
                     >
-                      <UncontrolledTooltip
-                        placement="bottom"
-                        target="tab"
-                      >
+                      <UncontrolledTooltip placement="bottom" target="tab">
                         Tableau
                       </UncontrolledTooltip>
                       <img
