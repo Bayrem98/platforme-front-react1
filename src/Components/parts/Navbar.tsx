@@ -96,12 +96,12 @@ export default function Navbard(props: NavbardInterfaceProps) {
   return (
     <div className="h-[50px]" style={{ backgroundColor: "#217575" }}>
       <Navbar expand="md" light responsive>
-        <Link to="/">
+        <NavbarBrand>
           <p className="whitespace-pre-wrap absolute cursor-pointer top-[10px] left-[45px] h-[61px] w-[135px]  font-['Helvetica'] text-2xl leading-[normal] text-left text-white">
             <FormattedMessage id="navbar.title" />
           </p>
           <IconHome />
-          </Link>
+        </NavbarBrand>
 
         <Form onSubmit={(e) => e.preventDefault()}>
           <Input
