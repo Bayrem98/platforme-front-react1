@@ -14,7 +14,6 @@ import {
   Modal,
   ModalBody,
   ModalFooter,
-  ModalHeader,
   Nav,
   Navbar,
   NavbarBrand,
@@ -65,9 +64,10 @@ export default function Navbard(props: NavbardInterfaceProps) {
   const handleLogin = (e: any) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/auth/login", { username, password })
+      .post("http://localhost:8000/auth/login", { username, password })
       .then(({ data }) => {
         localStorage.setItem("access_token", data.access_token);
+        window.location.reload();
         handelClose();
         console.log(data);
       })
@@ -80,6 +80,11 @@ export default function Navbard(props: NavbardInterfaceProps) {
     localStorage.removeItem("access_token");
     navigate("/");
     window.location.reload();
+  };
+
+  const logout1 = () => {
+    localStorage.removeItem("access_token1");
+    window.location.replace("http://localhost:3000/");
   }; // function for logout admin.
 
   const handleSearch = () => {
@@ -89,19 +94,19 @@ export default function Navbard(props: NavbardInterfaceProps) {
   const eye = <FontAwesomeIcon icon={faEye} />;
 
   return (
-    <div className="h-[50px] bg-gray-400">
+    <div className="h-[50px]" style={{ backgroundColor: "#217575" }}>
       <Navbar expand="md" light responsive>
-        <NavbarBrand>
+        <Link to="/">
           <p className="whitespace-pre-wrap absolute cursor-pointer top-[10px] left-[45px] h-[61px] w-[135px]  font-['Helvetica'] text-2xl leading-[normal] text-left text-white">
             <FormattedMessage id="navbar.title" />
           </p>
           <IconHome />
-        </NavbarBrand>
+          </Link>
 
         <Form onSubmit={(e) => e.preventDefault()}>
           <Input
             onChange={(e) => setSearch(e.target.value)}
-            className="w-[450px] h-11 absolute top-[3px] left-[270px] rounded-[20px] bg-[#e7eaec] font-['Helvetica']"
+            className="w-[400px] h-11 absolute top-[3px] left-[250px] rounded-[20px] bg-[#e7eaec] font-['Helvetica']"
             type="text"
             placeholder={intl.formatMessage({ id: "placeholder" })}
           />
@@ -115,16 +120,16 @@ export default function Navbard(props: NavbardInterfaceProps) {
           Accueil
         </UncontrolledTooltip>
 
-        <Link to="/">
-          <img
-            id="home"
-            className="left-[750px] top-[3px] absolute"
-            src="/img/icons/icons8-home-80.png"
-            height={35}
-            width={40}
-            alt="img"
-          />
-        </Link>
+        <img
+          id="home"
+          className="left-[660px] top-[3px] absolute"
+          src="/img/icons/icons8-home-80.png"
+          height={35}
+          width={40}
+          alt="img"
+          style={{ cursor: "pointer" }}
+          onClick={logout1}
+        />
 
         <UncontrolledTooltip placement="bottom" target="affichageliste">
           Affichage par list
@@ -133,7 +138,7 @@ export default function Navbard(props: NavbardInterfaceProps) {
         <Link to="/theme5">
           <img
             id="affichageliste"
-            className="top-[4px] left-[890px] absolute"
+            className="top-[4px] left-[790px] absolute"
             src="/img/icons/icons8-menu-rounded-50.png"
             alt="img"
             width={37}
@@ -147,7 +152,7 @@ export default function Navbard(props: NavbardInterfaceProps) {
         <Link to="/adminpage">
           <img
             id="affichageicon"
-            className="top-[4px] left-[960px] absolute"
+            className="top-[4px] left-[860px] absolute"
             src="/img/icons/icons8-grid-view-24.png"
             alt="img"
             width={38}
@@ -160,7 +165,7 @@ export default function Navbard(props: NavbardInterfaceProps) {
 
         <Nav navbar>
           <UncontrolledDropdown
-            className="left-[820px] top-[-3px] absolute"
+            className="left-[720px] top-[-3px] absolute"
             inNavbar
             nav
           >
@@ -175,7 +180,7 @@ export default function Navbard(props: NavbardInterfaceProps) {
             </DropdownToggle>
             <DropdownMenu
               style={{
-                backgroundColor: "lightgray",
+                backgroundColor: "#b79e56",
                 height: 65,
                 margin: 2,
                 padding: 7,
@@ -215,7 +220,7 @@ export default function Navbard(props: NavbardInterfaceProps) {
           {localStorage.getItem("access_token") ? (
             <>
               <UncontrolledDropdown
-                className="left-[1030px] top-[-3px] absolute"
+                className="left-[920px] top-[-3px] absolute"
                 inNavbar
                 nav
               >
@@ -237,7 +242,7 @@ export default function Navbard(props: NavbardInterfaceProps) {
                 </DropdownToggle>
                 <DropdownMenu
                   style={{
-                    backgroundColor: "lightgray",
+                    backgroundColor: "#b79e56",
                     height: 120,
                     padding: 1,
                   }}
@@ -283,10 +288,7 @@ export default function Navbard(props: NavbardInterfaceProps) {
                       to="/tableml"
                       style={{ textDecoration: "none", color: "black" }}
                     >
-                      <UncontrolledTooltip
-                        placement="bottom"
-                        target="tab"
-                      >
+                      <UncontrolledTooltip placement="bottom" target="tab">
                         Tableau
                       </UncontrolledTooltip>
                       <img
@@ -308,7 +310,7 @@ export default function Navbard(props: NavbardInterfaceProps) {
 
         {localStorage.getItem("access_token") ? (
           <Button
-            className="w-[40px] h-[40px] left-[1220px] top-[-15px] absolute"
+            className="w-[40px] h-[40px] left-[1210px] top-[-15px] absolute"
             onClick={logout}
             style={{
               backgroundColor: "#e6e1dc00",
@@ -327,7 +329,7 @@ export default function Navbard(props: NavbardInterfaceProps) {
           </Button>
         ) : (
           <Button
-            className="w-[40px] h-[40px] left-[1220px] top-[-17px] absolute"
+            className="w-[40px] h-[40px] left-[1210px] top-[-17px] absolute"
             onClick={toggleModal}
             style={{
               backgroundColor: "#e6e1dc00",
@@ -350,14 +352,31 @@ export default function Navbard(props: NavbardInterfaceProps) {
       {open ? (
         <Modal centered scrollable isOpen={open} toggle={() => setOpen(false)}>
           <Form onSubmit={(e) => handleLogin(e)}>
-            <ModalHeader
-              className="font-['Helvetica']"
-              toggle={() => setOpen(!open)}
-              style={{ backgroundColor: "gray", color: "white" }}
-            >
-              <FormattedMessage id="modal.title.button.login" />
-            </ModalHeader>
-            <ModalBody>
+            <ModalBody toggle={() => setOpen(!open)}>
+              <p
+                style={{
+                  color: "#b79e56",
+                  textAlign: "center",
+                  textDecoration: "underline",
+                  fontSize: 25,
+                }}
+              >
+                CONNECTER-ADMIN
+              </p>
+              <span
+                onClick={handelClose}
+                style={{
+                  position: "absolute",
+                  right: 10,
+                  top: 2,
+                  cursor: "pointer",
+                  color: "gray",
+                  fontSize: 20,
+                }}
+              >
+                X
+              </span>
+              <br />
               <FormGroup floating>
                 <Input
                   value={username}
@@ -366,7 +385,7 @@ export default function Navbard(props: NavbardInterfaceProps) {
                   type="text"
                   onChange={changeUsername}
                 />
-                <Label className="font-['Helvetica']" for="username">
+                <Label for="username">
                   <FormattedMessage id="user.username" />
                 </Label>
               </FormGroup>
@@ -379,22 +398,28 @@ export default function Navbard(props: NavbardInterfaceProps) {
                   onChange={changePassword}
                 />
                 <i
-                  className="absolute h-[20px] w-[20px] top-[18px] right-[16px] cursor-pointer"
-                  style={{ color: "gray" }}
+                  style={{
+                    color: "#b79e56",
+                    position: "absolute",
+                    top: 18,
+                    right: 16,
+                    height: 20,
+                    width: 20,
+                    cursor: "pointer",
+                  }}
                   onClick={togglePasswordVisiblity}
                 >
                   {eye}
                 </i>
-                <Label className="font-['Helvetica']" for="password">
+                <Label for="password">
                   <FormattedMessage id="user.password" />
                 </Label>
               </FormGroup>
             </ModalBody>
             <ModalFooter>
               <Button
-                className="font-['Helvetica']"
                 style={{
-                  backgroundColor: "gray",
+                  backgroundColor: "#b79e56",
                   border: 0,
                 }}
                 type="submit"
@@ -403,9 +428,8 @@ export default function Navbard(props: NavbardInterfaceProps) {
                 <FormattedMessage id="button.confirm" />
               </Button>
               <Button
-                className="font-['Helvetica']"
                 style={{
-                  backgroundColor: "gray",
+                  backgroundColor: "lightgray",
                   border: 0,
                 }}
                 onClick={handelClose}

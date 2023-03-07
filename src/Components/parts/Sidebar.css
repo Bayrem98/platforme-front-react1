@@ -24,13 +24,12 @@
   color: #ffffff;
   height: 190px;
   width: 247px;
-  padding-top: 158px;
   position: fixed;
   z-index: 1;
 }
 
 .pro-sidebar > .pro-sidebar-inner {
-  background: rgb(156 163 175);
+  background: #217575;
   height: 1024px;
   position: relative;
   z-index: 101;

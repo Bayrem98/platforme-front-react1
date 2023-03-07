@@ -91,7 +91,7 @@
   "placeholder": "Search here...",
   "title.acc": "What's new at the library",
   "title2.acc": "All themes",
-  "search.page.title": "*You are looking for :",
+  "search.page.title": "Your Research :",
   "bookdetails.button": "backtrack",
   "affichageList.title": "View by List",
   "affichageIcon.title": "Display by icons",
@@ -111,5 +111,11 @@
   "page.title2.tables": "Every month you have to delete the data and enter the new data.",
   "table.delete.dialog.title": "Delete",
   "tables.delete.dialog.text": "Do you really want to delete",
-  "tables.add.dialog.title": "Add"
+  "tables.add.dialog.title": "Add",
+  "login.btn": "Login",
+  "login.text": "Sign In to your account",
+  "login.username": "Username",
+  "login.pass": "Password",
+  "book.audio": "Import sound",
+  "book.audios": "Sound"
 }

@@ -6,7 +6,7 @@ export function getTables(
   callback: (data: Tablee[]) => void
 ) {
   axios
-    .get("http://localhost:5000/table", {
+    .get("http://localhost:5001/table", {
       params: query,
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access_token")}`,
@@ -22,7 +22,7 @@ export function getTables(
 
 export function getTable(id: string, callback: (data: Tablee) => void) {
   axios
-    .get("http://localhost:5000/table/" + id, {
+    .get("http://localhost:5001/table/" + id, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access_token")}`,
       },
@@ -37,7 +37,7 @@ export function getTable(id: string, callback: (data: Tablee) => void) {
 
 export function addtable(table: Tablee, callback: () => void) {
   axios
-    .post("http://localhost:5000/table", table)
+    .post("http://localhost:5001/table", table)
     .then(() => {
       callback();
     })
@@ -48,7 +48,7 @@ export function addtable(table: Tablee, callback: () => void) {
 
 export function deleteTables(table: Tablee, callback: () => void) {
   axios
-    .delete(`http://localhost:5000/table/${table._id}`)
+    .delete(`http://localhost:5001/table/${table._id}`)
     .then(() => {
       callback();
     })

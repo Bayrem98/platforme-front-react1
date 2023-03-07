@@ -7,4 +7,5 @@ export default interface Book {
   language: string;
   theme: string;
   description: string;
+  audio: string;
 }

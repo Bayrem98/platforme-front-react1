@@ -20,14 +20,14 @@ const AddUser2 = (props: Props) => {
 
   return (
     <div
-      className="box-border block left-[245px] w-[1035px] h-[855px] absolute overflow-x-hidden rounded-sm bg-[#f3f3f3]"
+      className="box-border block left-[245px] w-[1035px] h-[822px] absolute overflow-x-hidden rounded-sm bg-[#f3f3f3]"
       style={{
         boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)",
       }}
     >
       <Line1 />
 
-      <p className="whitespace-pre-wrap absolute top-[60px] left-[20px] font-['Helvetica'] text-xl leading-[normal] tracking-[0.03em] text-left capitalize text-[#897647]">
+      <p className="whitespace-pre-wrap absolute top-[60px] left-[40px] font-['Helvetica'] text-xl leading-[normal] tracking-[0.03em] text-left capitalize text-[#b79e56]">
         <FormattedMessage id="page.title.users" />
       </p>
 

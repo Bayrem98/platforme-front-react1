@@ -28,7 +28,7 @@ const SearchBooks = () => {
 
   return (
     <div
-      className="box-border block left-[245px] w-[1035px] h-[855px] absolute overflow-x-hidden rounded-sm bg-[#f3f3f3]"
+      className="box-border block left-[245px] w-[1035px] h-[822px] absolute overflow-x-hidden rounded-sm bg-[#f3f3f3]"
       style={{
         boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)",
       }}

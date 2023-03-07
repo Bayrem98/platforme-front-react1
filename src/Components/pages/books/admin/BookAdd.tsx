@@ -11,7 +11,6 @@ import {
   Modal,
   ModalBody,
   ModalFooter,
-  ModalHeader,
 } from "reactstrap";
 import { addbook } from "../../../../action/Books/action";
 
@@ -59,19 +58,20 @@ const BookAdd = (props: BookAddPropsType) => {
   const [language, setLanguage] = useState<string>(fields[0].key);
   const [theme, setTheme] = useState<string>(fieldss[0].key);
   const [description, setDescription] = useState<string>("");
+  const [audio, setAudio] = useState<any>();
 
   const changeCoverHandler = (event: any) => {
     const selectedCover = event.target.files[0];
     const formData = new FormData();
     formData.append("file", selectedCover);
-    fetch("http://localhost:5000/upload/cover", {
+    fetch("http://localhost:5001/upload/cover", {
       method: "POST",
       body: formData,
     })
       .then((response) => response.json())
       .then((result) => {
         console.log("Success:", result);
-        setCoverPath("http://localhost:5000/upload/cover/" + result.filename);
+        setCoverPath("http://localhost:5001/upload/cover/" + result.filename);
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -83,20 +83,39 @@ const BookAdd = (props: BookAddPropsType) => {
     const selectedPDF = event.target.files[0];
     const formData = new FormData();
     formData.append("file", selectedPDF);
-    fetch("http://localhost:5000/upload/pdf", {
+    fetch("http://localhost:5001/upload/pdf", {
       method: "POST",
       body: formData,
     })
       .then((response) => response.json())
       .then((result) => {
         console.log("Success:", result);
-        setPdfPath("http://localhost:5000/upload/pdf/" + result.filename);
+        setPdfPath("http://localhost:5001/upload/pdf/" + result.filename);
       })
       .catch((error) => {
         console.error("Error:", error);
         setPdfPath(undefined);
       });
   }; // function for upload pdf book.
+
+  const changeAudioHandler = (event: any) => {
+    const selectedAudio = event.target.files[0];
+    const formData = new FormData();
+    formData.append("file", selectedAudio);
+    fetch("http://localhost:5001/upload/audio", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        console.log("Success:", result);
+        setAudio("http://localhost:5001/upload/audio/" + result.filename);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        setAudio(undefined);
+      });
+  }; // function for upload audio book.
 
   const submit = () => {
     const newBook = {
@@ -107,6 +126,7 @@ const BookAdd = (props: BookAddPropsType) => {
       language,
       theme,
       description,
+      audio,
     };
     console.log(newBook);
 
@@ -125,13 +145,14 @@ const BookAdd = (props: BookAddPropsType) => {
     setLanguage(fields[0].key);
     setTheme(fieldss[0].key);
     setDescription("");
+    setAudio("");
   };
 
   return (
     <>
       <Button
         className="w-[50px] h-[50px] top-[-90px] left-[880px] absolute"
-        style={{ backgroundColor: "#deb887", border: 0 }}
+        style={{ backgroundColor: "#b79e56", border: 0 }}
         size="lg"
         onClick={() => setIsOpened(true)}
       >
@@ -144,13 +165,31 @@ const BookAdd = (props: BookAddPropsType) => {
         isOpen={isOpened}
         toggle={() => setIsOpened(!isOpened)}
       >
-        <ModalHeader
-          style={{ backgroundColor: "gray", color: "white" }}
-          toggle={() => setIsOpened(!isOpened)}
-        >
-          <FormattedMessage id="books.add.dialog.title" />
-        </ModalHeader>
-        <ModalBody>
+        <ModalBody toggle={() => setIsOpened(!isOpened)}>
+          <p
+            style={{
+              color: "#b79e56",
+              textAlign: "center",
+              textDecoration: "underline",
+              fontSize: 25,
+            }}
+          >
+            <FormattedMessage id="books.add.dialog.title" />
+          </p>
+          <span
+            onClick={() => setIsOpened(false)}
+            style={{
+              position: "absolute",
+              right: 10,
+              top: 2,
+              cursor: "pointer",
+              color: "gray",
+              fontSize: 20,
+            }}
+          >
+            X
+          </span>
+          <br />
           <Form inline>
             <FormGroup floating>
               <Input
@@ -234,6 +273,17 @@ const BookAdd = (props: BookAddPropsType) => {
                 onChange={changePDFHandler}
               />
             </FormGroup>
+            <FormGroup>
+              <Label for="audio">
+                <FormattedMessage id="book.audio" />
+              </Label>
+              <Input
+                id="audio"
+                name="audio"
+                type="file"
+                onChange={changeAudioHandler}
+              />
+            </FormGroup>
             <FormGroup floating>
               <Input
                 value={description}
@@ -251,7 +301,7 @@ const BookAdd = (props: BookAddPropsType) => {
         <ModalFooter>
           <Button
             style={{
-              backgroundColor: "gray",
+              backgroundColor: "#b79e56",
               border: 0,
             }}
             onClick={submit}
@@ -260,8 +310,9 @@ const BookAdd = (props: BookAddPropsType) => {
               !author ||
               !language ||
               !theme ||
-              !pdfPath ||
               !coverPath ||
+              !pdfPath ||
+              !audio ||
               !description
             }
           >
@@ -269,7 +320,7 @@ const BookAdd = (props: BookAddPropsType) => {
           </Button>{" "}
           <Button
             style={{
-              backgroundColor: "gray",
+              backgroundColor: "lightgray",
               border: 0,
             }}
             onClick={() => setIsOpened(false)}

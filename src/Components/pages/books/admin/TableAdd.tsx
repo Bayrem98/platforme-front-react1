@@ -11,7 +11,6 @@ import {
   Modal,
   ModalBody,
   ModalFooter,
-  ModalHeader,
 } from "reactstrap";
 import { addtable } from "../../../../action/Tables/action";
 
@@ -99,7 +98,7 @@ const TableAdd = (props: BookAddPropsType) => {
     <>
       <Button
         className="w-[50px] h-[50px] top-[-50px] left-[880px] absolute"
-        style={{ backgroundColor: "#deb887", border: 0 }}
+        style={{ backgroundColor: "#b79e56", border: 0 }}
         size="lg"
         onClick={() => setIsOpened(true)}
       >
@@ -112,13 +111,31 @@ const TableAdd = (props: BookAddPropsType) => {
         isOpen={isOpened}
         toggle={() => setIsOpened(!isOpened)}
       >
-        <ModalHeader
-          style={{ backgroundColor: "gray", color: "white" }}
-          toggle={() => setIsOpened(!isOpened)}
-        >
-          <FormattedMessage id="tables.add.dialog.title" />
-        </ModalHeader>
-        <ModalBody>
+        <ModalBody toggle={() => setIsOpened(!isOpened)}>
+          <p
+            style={{
+              color: "#b79e56",
+              textAlign: "center",
+              textDecoration: "underline",
+              fontSize: 25,
+            }}
+          >
+            <FormattedMessage id="tables.add.dialog.title" />
+          </p>
+          <span
+            onClick={() => setIsOpened(false)}
+            style={{
+              position: "absolute",
+              right: 10,
+              top: 2,
+              cursor: "pointer",
+              color: "gray",
+              fontSize: 20,
+            }}
+          >
+            X
+          </span>
+          <br />
           <Form inline>
             <FormGroup floating>
               <Input
@@ -196,17 +213,17 @@ const TableAdd = (props: BookAddPropsType) => {
         <ModalFooter>
           <Button
             style={{
-              backgroundColor: "gray",
+              backgroundColor: "#b79e56",
               border: 0,
             }}
             onClick={submit}
-            disabled={!phaseLun || !date || !signe}
+            disabled={!phaseLun || !date || !signe || !coverPath}
           >
             <FormattedMessage id="button.confirm" />
           </Button>{" "}
           <Button
             style={{
-              backgroundColor: "gray",
+              backgroundColor: "lightgray",
               border: 0,
             }}
             onClick={() => setIsOpened(false)}

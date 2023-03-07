@@ -55,7 +55,7 @@ const UserAdd = (props: UserAddPropsType) => {
     <>
       <Button
         className="w-[50px] h-[50px] top-[-210px] left-[880px] absolute"
-        style={{ backgroundColor: "#deb887", border: 0 }}
+        style={{ backgroundColor: "#b79e56", border: 0 }}
         size="lg"
         onClick={() => setIsOpened(true)}
       >
@@ -69,13 +69,31 @@ const UserAdd = (props: UserAddPropsType) => {
         toggle={() => setIsOpened(!isOpened)}
       >
         <Form onSubmit={(e) => submit()}>
-          <ModalHeader
-            toggle={() => setIsOpened(!isOpened)}
-            style={{ backgroundColor: "gray", color: "white" }}
-          >
-            <FormattedMessage id="users.add.dialog.title" />
-          </ModalHeader>
-          <ModalBody>
+          <ModalBody toggle={() => setIsOpened(!isOpened)}>
+            <p
+              style={{
+                color: "#b79e56",
+                textAlign: "center",
+                textDecoration: "underline",
+                fontSize: 25,
+              }}
+            >
+              <FormattedMessage id="users.add.dialog.title" />
+            </p>
+            <span
+              onClick={() => setIsOpened(false)}
+              style={{
+                position: "absolute",
+                right: 10,
+                top: 2,
+                cursor: "pointer",
+                color: "gray",
+                fontSize: 20,
+              }}
+            >
+              X
+            </span>
+            <br />
             <FormGroup floating>
               <Input
                 value={username}
@@ -98,7 +116,7 @@ const UserAdd = (props: UserAddPropsType) => {
               />
               <i
                 className="absolute h-[20px] w-[20px] top-[18px] right-[16px] cursor-pointer"
-                style={{ color: "gray" }}
+                style={{ color: "#b79e56" }}
                 onClick={togglePasswordVisiblity}
               >
                 {eye}
@@ -111,7 +129,7 @@ const UserAdd = (props: UserAddPropsType) => {
           <ModalFooter>
             <Button
               style={{
-                backgroundColor: "gray",
+                backgroundColor: "#b79e56",
                 border: 0,
               }}
               type="submit"
@@ -121,7 +139,7 @@ const UserAdd = (props: UserAddPropsType) => {
             </Button>{" "}
             <Button
               style={{
-                backgroundColor: "gray",
+                backgroundColor: "lightgray",
                 border: 0,
               }}
               onClick={() => setIsOpened(false)}

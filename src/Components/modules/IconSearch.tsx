@@ -3,7 +3,7 @@ import React from "react";
 const IconSearch = () => {
   return (
     <svg
-      className="w-[18px] h-[16.52px] top-[16px] left-[690px] absolute"
+      className="w-[18px] h-[16.52px] top-[16px] left-[620px] absolute"
       width={20}
       height={19}
       viewBox="0 0 20 19"

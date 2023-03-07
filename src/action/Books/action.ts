@@ -6,7 +6,7 @@ export function getBooks(
   callback: (data: Book[]) => void
 ) {
   axios
-    .get("http://localhost:5000/book", {
+    .get("http://localhost:5001/book", {
       params: query,
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access_token")}`,
@@ -22,7 +22,7 @@ export function getBooks(
 
 export function getBook(id: string, callback: (data: Book) => void) {
   axios
-    .get("http://localhost:5000/book/" + id, {
+    .get("http://localhost:5001/book/" + id, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access_token")}`,
       },
@@ -37,7 +37,7 @@ export function getBook(id: string, callback: (data: Book) => void) {
 
 export function addbook(book: Book, callback: () => void) {
   axios
-    .post("http://localhost:5000/book", book)
+    .post("http://localhost:5001/book", book)
     .then(() => {
       callback();
     })
@@ -48,7 +48,7 @@ export function addbook(book: Book, callback: () => void) {
 
 export function deleteBooks(book: Book, callback: () => void) {
   axios
-    .delete(`http://localhost:5000/book/${book._id}`)
+    .delete(`http://localhost:5001/book/${book._id}`)
     .then(() => {
       callback();
     })

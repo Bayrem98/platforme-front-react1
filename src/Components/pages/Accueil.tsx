@@ -8,7 +8,6 @@ import Book from "../../@Types/Book";
 import { getBooks } from "../../action/Books/action";
 import Rectangle73 from "../modules/Rectangle73";
 import Group10 from "../modules/Group10";
-import Line2 from "../modules/Line2";
 import { FormattedMessage } from "react-intl";
 import { Table } from "reactstrap";
 import Tablee from "../../@Types/Table";
@@ -33,12 +32,12 @@ const Accueil = (props: props) => {
 
   return (
     <div
-      className="box-border block left-[245px] w-[1035px] h-[855px] absolute overflow-x-hidden rounded-sm bg-[#f3f3f3]"
+      className="box-border block left-[245px] w-[1035px] h-[822px] absolute overflow-x-hidden rounded-sm bg-[#f3f3f3]"
       style={{
         boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)",
       }}
     >
-      <p className="whitespace-pre-wrap absolute top-[40px] left-[20px] font-['Helvetica'] text-xl leading-[normal] tracking-[0.03em] text-left capitalize text-[#897647]">
+      <p className="whitespace-pre-wrap absolute top-[40px] left-[20px] font-['Helvetica'] text-xl leading-[normal] tracking-[0.03em] text-left capitalize text-[#b79e56]">
         <FormattedMessage id="page.title.tables" />
       </p>
 
@@ -46,7 +45,7 @@ const Accueil = (props: props) => {
         <Table responsive hover>
           <thead
             style={{
-              backgroundColor: "rgba(211, 201, 18, 0.747)",
+              backgroundColor: "lightgray",
               color: "black",
             }}
           >
@@ -103,11 +102,11 @@ const Accueil = (props: props) => {
         </Table>
       </div>
 
-      <p className="whitespace-pre-wrap absolute top-[420px] left-[20px] font-['Helvetica'] text-xl leading-[normal] tracking-[0.03em] text-left capitalize text-[#897647]">
+      <p className="whitespace-pre-wrap absolute top-[420px] left-[20px] font-['Helvetica'] text-xl leading-[normal] tracking-[0.03em] text-left capitalize text-[#b79e56]">
         <FormattedMessage id="title2.acc" />
       </p>
 
-      <p className="whitespace-pre-wrap absolute top-[40px] left-[600px] font-['Helvetica'] text-xl leading-[normal] tracking-[0.03em] text-left capitalize text-[#897647]">
+      <p className="whitespace-pre-wrap absolute top-[40px] left-[600px] font-['Helvetica'] text-xl leading-[normal] tracking-[0.03em] text-left capitalize text-[#b79e56]">
         <FormattedMessage id="title.acc" />
       </p>
 
@@ -174,8 +173,6 @@ const Accueil = (props: props) => {
       <p className="whitespace-pre-wrap absolute top-[790px] left-[855px] font-['Helvetica'] text-xl leading-[normal] tracking-[0.03em] italic text-left text-black">
         <FormattedMessage id="theme4" />
       </p>
-
-      <Line2 />
     </div>
   );
 };

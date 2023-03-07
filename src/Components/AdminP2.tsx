@@ -20,57 +20,41 @@ const BooksTable = (props: Props) => {
 
   return (
     <div
-      className="box-border block left-[245px] w-[1035px] h-[855px] absolute overflow-x-hidden rounded-sm bg-[#f3f3f3]"
+      className="box-border block left-[245px] w-[1035px] h-[822px] absolute overflow-x-hidden rounded-sm bg-[#f3f3f3]"
       style={{
         boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)",
       }}
     >
       <Line1 />
 
-      <p className="whitespace-pre-wrap absolute top-[60px] left-[20px] font-['Helvetica'] text-xl leading-[normal] tracking-[0.03em] text-left capitalize text-[#897647]">
+      <p className="whitespace-pre-wrap absolute top-[60px] left-[15px] font-['Helvetica'] text-xl leading-[normal] tracking-[0.03em] text-left capitalize text-[#b79e56]">
         <FormattedMessage id="page.title.books" />
       </p>
 
       <Container className="top-[130px] absolute font-['Helvetica']">
         <BookAdd refresh={() => getBooks(null, setBooks)} />
         <Table bordered responsive hover>
-          <thead>
+          <thead style={{ backgroundColor: "lightgray" }}>
             <tr>
-              <th
-                className="font-['Helvetica']"
-                style={{ color: "#0e0e0ee7", backgroundColor: "lightgray" }}
-              >
+              <th className="font-['Helvetica']">
                 <FormattedMessage id="book.title" />
               </th>
-              <th
-                className="font-['Helvetica']"
-                style={{ color: "#0e0e0ee7", backgroundColor: "lightgray" }}
-              >
+              <th className="font-['Helvetica']">
                 <FormattedMessage id="book.author" />
               </th>
-              <th
-                className="font-['Helvetica']"
-                style={{ color: "#0e0e0ee7", backgroundColor: "lightgray" }}
-              >
+              <th className="font-['Helvetica']">
                 <FormattedMessage id="book.coverpath" />
               </th>
-              <th
-                className="font-['Helvetica']"
-                style={{ color: "#0e0e0ee7", backgroundColor: "lightgray" }}
-              >
+              <th className="font-['Helvetica']">
                 <FormattedMessage id="book.language" />
               </th>
-              <th style={{ color: "#0e0e0ee7", backgroundColor: "lightgray" }}>
+              <th>
                 <FormattedMessage id="book.theme" />
               </th>
-              <th
-                className="font-['Helvetica']"
-                style={{
-                  color: "#0e0e0ee7",
-                  backgroundColor: "lightgray",
-                  textAlign: "center",
-                }}
-              >
+              <th>
+                <FormattedMessage id="book.audios" />
+              </th>
+              <th style={{ textAlign: "center" }} className="font-['Helvetica']">
                 <FormattedMessage id="book.actions" />
               </th>
             </tr>
@@ -110,6 +94,18 @@ const BooksTable = (props: Props) => {
                     style={{ color: "#0e0e0ee7" }}
                   >
                     {book.theme}
+                  </td>
+                  <td
+                    className="font-['Helvetica']"
+                    style={{ color: "#0e0e0ee7" }}
+                  >
+                    <audio
+                      style={{ width: 100 }}
+                      controls
+                      controlsList="nodownload"
+                    >
+                      <source src={book.audio} />
+                    </audio>
                   </td>
                   <td style={{ textAlign: "center" }}>
                     <ButtonGroup>

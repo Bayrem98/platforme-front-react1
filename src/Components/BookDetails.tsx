@@ -1,7 +1,5 @@
 import React from "react";
 import Ellipse2 from "./modules/Ellipse2";
-import IconNavArrowLeft from "./modules/IconNavArrowLeft";
-import Ellipse1 from "./modules/Ellipse1";
 import { FormattedMessage } from "react-intl";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { Button } from "reactstrap";
@@ -22,7 +20,7 @@ const BookDetails = (props: Props) => {
 
   return book ? (
     <div
-      className="box-border block left-[245px] w-[1035px] h-[855px] absolute overflow-x-hidden rounded-sm bg-[#f3f3f3]"
+      className="box-border block left-[245px] w-[1035px] h-[822px] absolute overflow-x-hidden rounded-sm bg-[#f3f3f3]"
       style={{
         boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)",
       }}
@@ -30,7 +28,7 @@ const BookDetails = (props: Props) => {
       <Ellipse2 />
       <Link to={"/pdffiles/" + book._id} style={{ textDecoration: "none" }}>
         <Button
-          className="w-[187px] h-[42px] absolute top-[570px] left-[480px] rounded-[20px] font-['Helvetica'] bg-[#62625c]"
+          className="w-[187px] h-[42px] absolute top-[570px] left-[480px] rounded-[20px] font-['Helvetica'] bg-[#b79e56]"
           style={{
             boxShadow: "0px 4px 4px 0 rgba(0,0,0,0.25)",
           }}
@@ -57,9 +55,8 @@ const BookDetails = (props: Props) => {
         {book.description}
       </p>
       <div onClick={() => navigate(-1)} style={{ cursor: "pointer" }}>
-        <IconNavArrowLeft />
-        <Ellipse1 />
-        <p className="top-[82px] left-[65px] absolute capitalize text-[#897647] font-['Helvetica']">
+        <img src="/img/previous (2).png" alt="" width={28} className="absolute top-[80px] left-[32px]" />
+        <p className="top-[83px] left-[65px] absolute capitalize text-[#b79e56] font-['Helvetica']">
           <FormattedMessage id="bookdetails.button" />
         </p>
       </div>

@@ -10,6 +10,7 @@ export const books: Book[] = [
     language: "fr",
     theme: "astrologie",
     description: "resume de livre",
+    audio: "/audio/Coacher-les-emotions-chap1.mp3",
   },
   {
     _id: "32323",
@@ -20,6 +21,7 @@ export const books: Book[] = [
     language: "fr",
     theme: "astrologie",
     description: "resume de livre",
+    audio: "/audio/Coacher-les-emotions-chap1.mp3",
   },
   {
     _id: "32323",
@@ -30,6 +32,7 @@ export const books: Book[] = [
     language: "fr",
     theme: "astrologie",
     description: "resume de livre",
+    audio: "/audio/Coacher-les-emotions-chap1.mp3",
   },
   {
     _id: "32323",
@@ -40,5 +43,6 @@ export const books: Book[] = [
     language: "fr",
     theme: "astrologie",
     description: "resume de livre",
+    audio: "/audio/Coacher-les-emotions-chap1.mp3",
   },
 ];

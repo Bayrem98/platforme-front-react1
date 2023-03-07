@@ -7,7 +7,7 @@ export function login(
   fallback: () => void
 ) {
   axios
-    .post("http://localhost:5000/auth/login", {
+    .post("http://localhost:8000/auth/login", {
       username: username,
       password: pass,
     })
@@ -19,6 +19,12 @@ export function login(
       fallback();
     });
 }
+export function logout1() {
+  localStorage.removeItem("access_token1");
+  window.location.replace("http://localhost:3000/");
+}
+
+
 export function logout() {
   localStorage.removeItem("access_token");
   window.location.reload();

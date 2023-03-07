@@ -111,5 +111,11 @@
   "page.title2.tables": "A chaque mois il faut supprimer les données et entrée les nouvelles données.",
   "table.delete.dialog.title": "Supprimer",
   "tables.delete.dialog.text": "Voulez-vous vraiment supprimer",
-  "tables.add.dialog.title": "Ajouter"
+  "tables.add.dialog.title": "Ajouter",
+  "login.btn": "Connexion",
+  "login.text": "Connectez-vous à votre compte",
+  "login.username": "Nom de utilisateur",
+  "login.pass": "Mot de passe",
+  "book.audio": "Importer audio",
+  "book.audios": "Audio"
 }

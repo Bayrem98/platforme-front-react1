@@ -3,8 +3,6 @@ import WebViewer from "@pdftron/webviewer";
 import { useNavigate, useParams } from "react-router";
 import Book from "../../@Types/Book";
 import { getBook } from "../../action/Books/action";
-import IconNavArrowLeft from "../modules/IconNavArrowLeft";
-import Ellipse1 from "../modules/Ellipse1";
 import { FormattedMessage } from "react-intl";
 
 function PdfFiles() {
@@ -29,19 +27,33 @@ function PdfFiles() {
       );
   }, [book]); // function for lecteur pdf.
 
-  return (
+  return book ? (
     <div
-      className="h-[855px] w-[1033px] top-[50px] left-[247px] absolute"
+      className="h-[822px] w-[1030px] top-[50px] left-[247px] absolute"
       ref={viewerDiv}
     >
       <div onClick={() => navigate(-1)} style={{ cursor: "pointer" }}>
-        <IconNavArrowLeft />
-        <Ellipse1 />
-        <p className="top-[82px] left-[65px] absolute capitalize text-[#897647] font-['Helvetica']">
+        <img
+          src="/img/previous (2).png"
+          alt=""
+          width={25}
+          className="absolute top-[82px] left-[34px]"
+        />
+        <p className="top-[84px] left-[65px] absolute capitalize text-[#b79e56] font-['Helvetica']">
           <FormattedMessage id="bookdetails.button" />
         </p>
+        <audio
+          style={{ width: 220 }}
+          className="top-[150px] left-[808px] absolute"
+          controls
+          controlsList="nodownload"
+        >
+          <source src={book.audio} />
+        </audio>
       </div>
     </div>
+  ) : (
+    <></>
   );
 }
 
