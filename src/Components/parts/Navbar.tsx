@@ -352,7 +352,7 @@ export default function Navbard(props: NavbardInterfaceProps) {
       {open ? (
         <Modal centered scrollable isOpen={open} toggle={() => setOpen(false)}>
           <Form onSubmit={(e) => handleLogin(e)}>
-            <ModalBody toggle={() => setOpen(!open)}>
+            <ModalBody>
               <p
                 style={{
                   color: "#b79e56",

@@ -18,7 +18,6 @@ interface props {}
 
 const Accueil = (props: props) => {
   let { them } = useParams(); // params for théme books.
-  console.log(them);
   const [books, setBooks] = useState<Book[]>([]);
   const [tables, setTables] = useState<Tablee[]>([]);
 

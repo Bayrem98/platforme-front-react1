@@ -11,7 +11,6 @@ import {
   Modal,
   ModalBody,
   ModalFooter,
-  ModalHeader,
 } from "reactstrap";
 import { addUser } from "../../../action/Users/action";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
@@ -69,7 +68,7 @@ const UserAdd = (props: UserAddPropsType) => {
         toggle={() => setIsOpened(!isOpened)}
       >
         <Form onSubmit={(e) => submit()}>
-          <ModalBody toggle={() => setIsOpened(!isOpened)}>
+          <ModalBody>
             <p
               style={{
                 color: "#b79e56",

@@ -165,7 +165,7 @@ const BookAdd = (props: BookAddPropsType) => {
         isOpen={isOpened}
         toggle={() => setIsOpened(!isOpened)}
       >
-        <ModalBody toggle={() => setIsOpened(!isOpened)}>
+        <ModalBody>
           <p
             style={{
               color: "#b79e56",
@@ -190,7 +190,7 @@ const BookAdd = (props: BookAddPropsType) => {
             X
           </span>
           <br />
-          <Form inline>
+          <Form>
             <FormGroup floating>
               <Input
                 value={title}
